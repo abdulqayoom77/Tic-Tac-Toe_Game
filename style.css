@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: rgb(14, 50, 104);
+    color: white;
+    height: 50px;
+    font-size: 27px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px;
+    font-family: 'Roboto', sans-serif;
+}
+
+nav ul {
+    font-family: 'Baloo Bhaina 2', cursive;
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.gameContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: repeat(3, 10vw);
+    grid-template-columns: repeat(3, 10vw);
+    font-family: 'Baloo Bhaina 2', cursive;
+    position: relative;
+    /* border: 2px solid rgb(14, 50, 104);
+        border-radius: 5px; */
+}
+
+.box {
+    border: 2px solid rgb(14, 50, 104);
+    font-size: 8vw;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box:hover {
+    background-color: rgb(193, 215, 247);
+}
+
+.info {
+    font-size: 22px;
+}
+
+.gameInfo {
+    padding: 0 34px;
+    font-family: 'Baloo Bhaina 2', cursive;
+}
+
+.gameInfo h1 {
+    font-size: 2.5rem;
+}
+
+.imgbox img {
+    width: 0;
+    transition: width 1s ease-in-out;
+}
+
+.br-0 {
+    border-right: 0;
+}
+
+.bl-0 {
+    border-left: 0;
+}
+
+.bt-0 {
+    border-top: 0;
+}
+
+.bb-0 {
+    border-bottom: 0;
+}
+
+#reset {
+    margin: 0 23px;
+    padding: 1px 18px;
+    border: 2px groove rgb(14, 50, 104);
+    background: #ffffff;
+    color: rgb(14, 50, 104);
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Baloo Bhaina 2';
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+#reset:hover {
+    border: 2px groove rgb(255, 255, 255);
+    background: rgb(14, 50, 104);
+    color: rgb(255, 255, 255);
+}
+
+#reset:active {
+    transform: translateY(5px);
+}
+
+.line {
+    background-color: black;
+    height: 3px;
+    width: 0;
+    position: absolute;
+    background-color: rgb(14, 50, 104);
+    transition: width 1s ease-in-out;
+}
+
+@media screen and (max-width: 950px) {
+    .gameContainer {
+        flex-wrap: wrap;
+    }
+
+    .gameInfo {
+        margin-top: 34px;
+    }
+
+    .gameInfo h1 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        grid-template-rows: repeat(3, 20vw);
+        grid-template-columns: repeat(3, 20vw);
+    }
+}
+
+.button, .button1 {
+    margin: 0;
+    background: transparent;
+    padding: 0;
+    border: none;
+    /* cursor: none; */
+}
+
+.font{
+    font-family: 'Baloo Bhaina 2';
+}
+.button {
+    --border-right: 6px;
+    --text-stroke-color: rgba(0, 0, 0, 0.6);
+    --animation-color: rgb(14, 50, 104);
+    --fs-size: 1.5rem;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: var(--fs-size);
+    font-family: "Arial";
+    position: relative;
+    text-transform: capitalize;
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+    cursor: pointer;
+}
+
+.button1 {
+    --border-right: 6px;
+    --text-stroke-color: rgb(219, 214, 228);
+    --animation-color: rgb(255, 255, 255);
+    --fs-size: 1.5rem;
+    font-family: 'Baloo Bhaina 2';
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: var(--fs-size);
+    font-family: "Arial";
+    position: relative;
+    text-transform: capitalize;
+    cursor: pointer;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+
+.hover-text,.hover-text1 {
+    position: absolute;
+    box-sizing: border-box;
+    content: attr(data-text);
+    color: var(--animation-color);
+    width: 0%;
+    inset: 0;
+    border-right: var(--border-right) solid var(--animation-color);
+    overflow: hidden;
+    transition: 0.5s;
+    -webkit-text-stroke: 1px var(--animation-color);
+}
+
+/* hover */
+.button:hover .hover-text, .button1:hover .hover-text1 {
+    width: 100%;
+    filter: drop-shadow(0 0 23px var(--animation-color))
+}
+
